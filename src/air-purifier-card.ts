@@ -132,7 +132,10 @@ export class AirPurifierCard extends LitElement {
                 @value-changed=${this._setPercentage}
               ></round-slider>
               <div id="slider-center">
-                <div id="quality">${this.config.show_value ? `${pm25} µg/m³` : airQuality}</div>
+                <div id="quality"
+                  class=${classMap({ 'capitalize': !this.config.show_quality_value })}>
+                    ${this.config.show_quality_value ? `${pm25} µg/m³` : airQuality}
+                </div>
                 <ha-icon-button
                   class=${classMap({
                     'power-button': true,
@@ -275,6 +278,8 @@ export class AirPurifierCard extends LitElement {
       #quality {
         padding: 16px;
         pointer-events: none;
+      }
+      .capitalize {
         text-transform: capitalize;
       }
       .ledOn {

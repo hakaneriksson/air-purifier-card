@@ -15,10 +15,5 @@ export interface AirPurifierCardConfig extends LovelaceCardConfig {
   show_error?: boolean;
   test_gui?: boolean;
   entity?: string;
-  led_entity: string;
-  child_lock_entity: string;
-  show_value?: boolean;
-  tap_action?: ActionConfig;
-  hold_action?: ActionConfig;
-  double_tap_action?: ActionConfig;
+  show_quality_value?: boolean;
 }
